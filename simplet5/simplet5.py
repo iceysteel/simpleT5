@@ -143,19 +143,19 @@ class LightningDataModule(pl.LightningDataModule):
     def train_dataloader(self):
         """ training dataloader """
         return DataLoader(
-            self.train_dataset, batch_size=self.batch_size, shuffle=True, num_workers=2
+            self.train_dataset, batch_size=self.batch_size, shuffle=True, num_workers=16
         )
 
     def test_dataloader(self):
         """ test dataloader """
         return DataLoader(
-            self.test_dataset, batch_size=self.batch_size, shuffle=False, num_workers=2
+            self.test_dataset, batch_size=self.batch_size, shuffle=False, num_workers=16
         )
 
     def val_dataloader(self):
         """ validation dataloader """
         return DataLoader(
-            self.test_dataset, batch_size=self.batch_size, shuffle=False, num_workers=2
+            self.test_dataset, batch_size=self.batch_size, shuffle=False, num_workers=16
         )
 
 
